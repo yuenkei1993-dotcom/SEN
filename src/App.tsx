@@ -154,23 +154,35 @@ export default function App() {
 
               {!showSentence ? (
                 <div className="flex-1 w-full flex items-center justify-center gap-16 max-w-5xl">
-                  {/* Choice 1 */}
-                  <ChoiceCard 
-                    imageUrl={isCorrectOnLeft ? currentTask.correctImageUrl : currentTask.incorrectImageUrl}
-                    isCorrect={isCorrectOnLeft}
-                    onClick={() => handleChoice(isCorrectOnLeft)}
-                    feedback={feedback}
-                    hint={wrongAttempts >= 2 && isCorrectOnLeft}
-                  />
+                  {selectedStudent.id === '4' ? (
+                    <ChoiceCard 
+                      imageUrl={currentTask.correctImageUrl}
+                      isCorrect={true}
+                      onClick={() => handleChoice(true)}
+                      feedback={feedback}
+                      hint={false}
+                    />
+                  ) : (
+                    <>
+                      {/* Choice 1 */}
+                      <ChoiceCard 
+                        imageUrl={isCorrectOnLeft ? currentTask.correctImageUrl : currentTask.incorrectImageUrl}
+                        isCorrect={isCorrectOnLeft}
+                        onClick={() => handleChoice(isCorrectOnLeft)}
+                        feedback={feedback}
+                        hint={wrongAttempts >= 2 && isCorrectOnLeft}
+                      />
 
-                  {/* Choice 2 */}
-                  <ChoiceCard 
-                    imageUrl={isCorrectOnLeft ? currentTask.incorrectImageUrl : currentTask.correctImageUrl}
-                    isCorrect={!isCorrectOnLeft}
-                    onClick={() => handleChoice(!isCorrectOnLeft)}
-                    feedback={feedback}
-                    hint={wrongAttempts >= 2 && !isCorrectOnLeft}
-                  />
+                      {/* Choice 2 */}
+                      <ChoiceCard 
+                        imageUrl={isCorrectOnLeft ? currentTask.incorrectImageUrl : currentTask.correctImageUrl}
+                        isCorrect={!isCorrectOnLeft}
+                        onClick={() => handleChoice(!isCorrectOnLeft)}
+                        feedback={feedback}
+                        hint={wrongAttempts >= 2 && !isCorrectOnLeft}
+                      />
+                    </>
+                  )}
                 </div>
               ) : (
                 <motion.div 
