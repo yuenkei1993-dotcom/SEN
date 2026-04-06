@@ -7,28 +7,16 @@ export const INITIAL_STUDENTS: Student[] = [
 ];
 
 export const INITIAL_TASKS: Task[] = [
-  {
-    id: 't1',
-    studentId: '1',
-    correctImageUrl: 'https://picsum.photos/seed/jam/600/400',
-    incorrectImageUrl: 'https://picsum.photos/seed/towel/600/400',
-    sentence: '高毓軒正在塗巧克力醬。',
-    happySentence: '高毓軒塗巧克力醬好開心。',
-  },
-  {
-    id: 't2',
-    studentId: '2',
-    correctImageUrl: 'https://picsum.photos/seed/bread/600/400',
-    incorrectImageUrl: 'https://picsum.photos/seed/stone/600/400',
-    sentence: '周海濤拿著一片麵包。',
-    happySentence: '周海濤拿麵包好開心。',
-  },
-  {
-    id: 't3',
-    studentId: '3',
-    correctImageUrl: 'https://picsum.photos/seed/water/600/400',
-    incorrectImageUrl: 'https://picsum.photos/seed/fire/600/400',
-    sentence: '楊翹丹正在喝水。',
-    happySentence: '楊翹丹喝水好開心。',
-  },
+  // 高毓軒
+  { id: 't1-1', studentId: '1', correctImageUrl: 'https://i.postimg.cc/ncfZpfCx/gao-yu-xuan-(1).png', incorrectImageUrl: 'https://i.postimg.cc/FzZTMSYW/li-xu-shan.png', sentence: '高毓軒', happySentence: '高毓軒' },
+  { id: 't1-2', studentId: '1', correctImageUrl: 'https://i.postimg.cc/Hx3SK5cb/Get-Img.jpg', incorrectImageUrl: 'https://i.postimg.cc/YqF6LYrz/shutterstock-710865547.jpg', sentence: '吃棉花糖', happySentence: '吃棉花糖' },
+  { id: 't1-3', studentId: '1', correctImageUrl: 'https://i.postimg.cc/wvscpGBZ/images.jpg', incorrectImageUrl: 'https://i.postimg.cc/FsnRyspR/images-(1).jpg', sentence: '好開心', happySentence: '好開心' },
+  // 周海濤
+  { id: 't2-1', studentId: '2', correctImageUrl: 'https://i.postimg.cc/rpX59mm2/zhou-hai-tao-(2).png', incorrectImageUrl: 'https://i.postimg.cc/FzZTMSYW/li-xu-shan.png', sentence: '高毓軒', happySentence: '高毓軒' },
+  { id: 't2-2', studentId: '2', correctImageUrl: 'https://i.postimg.cc/Hx3SK5cb/Get-Img.jpg', incorrectImageUrl: 'https://i.postimg.cc/YqF6LYrz/shutterstock-710865547.jpg', sentence: '吃棉花糖', happySentence: '吃棉花糖' },
+  { id: 't2-3', studentId: '2', correctImageUrl: 'https://i.postimg.cc/wvscpGBZ/images.jpg', incorrectImageUrl: 'https://i.postimg.cc/FsnRyspR/images-(1).jpg', sentence: '好開心', happySentence: '好開心' },
+  // 楊翹丹
+  { id: 't3-1', studentId: '3', correctImageUrl: 'https://i.postimg.cc/1tRnWN1Y/yang-qiao-dan.png', incorrectImageUrl: 'https://i.postimg.cc/FzZTMSYW/li-xu-shan.png', sentence: '高毓軒', happySentence: '高毓軒' },
+  { id: 't3-2', studentId: '3', correctImageUrl: 'https://i.postimg.cc/Hx3SK5cb/Get-Img.jpg', incorrectImageUrl: 'https://i.postimg.cc/YqF6LYrz/shutterstock-710865547.jpg', sentence: '吃棉花糖', happySentence: '吃棉花糖' },
+  { id: 't3-3', studentId: '3', correctImageUrl: 'https://i.postimg.cc/wvscpGBZ/images.jpg', incorrectImageUrl: 'https://i.postimg.cc/FsnRyspR/images-(1).jpg', sentence: '好開心', happySentence: '好開心' },
 ];

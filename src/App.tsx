@@ -12,25 +12,15 @@ import { speak } from './lib/tts';
 
 export default function App() {
   const [state, setState] = useState<AppState>('selection');
-  const [students, setStudents] = useState<Student[]>(() => {
-    const saved = localStorage.getItem('sen_students');
-    return saved ? JSON.parse(saved) : INITIAL_STUDENTS;
-  });
-  const [tasks, setTasks] = useState<Task[]>(() => {
-    const saved = localStorage.getItem('sen_tasks');
-    return saved ? JSON.parse(saved) : INITIAL_TASKS;
-  });
+  const [students, setStudents] = useState<Student[]>(INITIAL_STUDENTS);
+  const [tasks, setTasks] = useState<Task[]>(INITIAL_TASKS);
   const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
   const [currentTaskIndex, setCurrentTaskIndex] = useState(0);
   const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(null);
   const [showSentence, setShowSentence] = useState(false);
   const [wrongAttempts, setWrongAttempts] = useState(0);
 
-  // Persistence
-  useEffect(() => {
-    localStorage.setItem('sen_students', JSON.stringify(students));
-    localStorage.setItem('sen_tasks', JSON.stringify(tasks));
-  }, [students, tasks]);
+  // No persistence needed anymore
 
   const studentTasks = useMemo(() => {
     if (!selectedStudent) return [];
