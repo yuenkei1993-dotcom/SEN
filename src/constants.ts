@@ -1,9 +1,9 @@
 import { Student, Task } from './types';
 
 export const INITIAL_STUDENTS: Student[] = [
-  { id: '1', name: '高毓軒', photoUrl: 'https://picsum.photos/seed/student1/400/400', finalSentence: '高毓軒好棒，練習完成！' },
-  { id: '2', name: '周海濤', photoUrl: 'https://picsum.photos/seed/student2/400/400', finalSentence: '周海濤好棒，練習完成！' },
-  { id: '3', name: '楊翹丹', photoUrl: 'https://picsum.photos/seed/student3/400/400', finalSentence: '楊翹丹好棒，練習完成！' },
+  { id: '1', name: '高毓軒', photoUrl: 'https://picsum.photos/seed/student1/400/400', finalSentence: '高毓軒吃棉花糖好開心。' },
+  { id: '2', name: '周海濤', photoUrl: 'https://picsum.photos/seed/student2/400/400', finalSentence: '周海濤吃棉花糖好開心。' },
+  { id: '3', name: '楊翹丹', photoUrl: 'https://picsum.photos/seed/student3/400/400', finalSentence: '楊翹丹吃棉花糖好開心。' },
 ];
 
 export const INITIAL_TASKS: Task[] = [
