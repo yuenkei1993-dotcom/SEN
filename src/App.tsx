@@ -153,34 +153,40 @@ export default function App() {
               </div>
 
               {!showSentence ? (
-                <div className="flex-1 w-full flex items-center justify-center gap-8 md:gap-12 max-w-6xl">
+                <div className="flex-1 w-full flex items-center justify-center gap-6 md:gap-12 lg:gap-16 max-w-7xl mx-auto">
                   {selectedStudent.id === '4' ? (
-                    <ChoiceCard 
-                      imageUrl={currentTask.correctImageUrl}
-                      isCorrect={true}
-                      onClick={() => handleChoice(true)}
-                      feedback={feedback}
-                      hint={false}
-                    />
+                    <div className="w-full max-w-md">
+                      <ChoiceCard 
+                        imageUrl={currentTask.correctImageUrl}
+                        isCorrect={true}
+                        onClick={() => handleChoice(true)}
+                        feedback={feedback}
+                        hint={false}
+                      />
+                    </div>
                   ) : (
                     <>
                       {/* Choice 1 */}
-                      <ChoiceCard 
-                        imageUrl={isCorrectOnLeft ? currentTask.correctImageUrl : currentTask.incorrectImageUrl}
-                        isCorrect={isCorrectOnLeft}
-                        onClick={() => handleChoice(isCorrectOnLeft)}
-                        feedback={feedback}
-                        hint={wrongAttempts >= 2 && isCorrectOnLeft}
-                      />
+                      <div className="w-full max-w-md">
+                        <ChoiceCard 
+                          imageUrl={isCorrectOnLeft ? currentTask.correctImageUrl : currentTask.incorrectImageUrl}
+                          isCorrect={isCorrectOnLeft}
+                          onClick={() => handleChoice(isCorrectOnLeft)}
+                          feedback={feedback}
+                          hint={wrongAttempts >= 2 && isCorrectOnLeft}
+                        />
+                      </div>
 
                       {/* Choice 2 */}
-                      <ChoiceCard 
-                        imageUrl={isCorrectOnLeft ? currentTask.incorrectImageUrl : currentTask.correctImageUrl}
-                        isCorrect={!isCorrectOnLeft}
-                        onClick={() => handleChoice(!isCorrectOnLeft)}
-                        feedback={feedback}
-                        hint={wrongAttempts >= 2 && !isCorrectOnLeft}
-                      />
+                      <div className="w-full max-w-md">
+                        <ChoiceCard 
+                          imageUrl={isCorrectOnLeft ? currentTask.incorrectImageUrl : currentTask.correctImageUrl}
+                          isCorrect={!isCorrectOnLeft}
+                          onClick={() => handleChoice(!isCorrectOnLeft)}
+                          feedback={feedback}
+                          hint={wrongAttempts >= 2 && !isCorrectOnLeft}
+                        />
+                      </div>
                     </>
                   )}
                 </div>
@@ -188,9 +194,9 @@ export default function App() {
                 <motion.div 
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
-                  className="flex-1 w-full flex flex-col items-center justify-center gap-6"
+                  className="flex-1 w-full flex flex-col items-center justify-center gap-8"
                 >
-                  <div className="w-full max-w-3xl aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
+                  <div className="w-full max-w-4xl aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
                     <img 
                       src={currentTask.correctImageUrl} 
                       alt="Correct" 
@@ -198,13 +204,13 @@ export default function App() {
                       referrerPolicy="no-referrer"
                     />
                   </div>
-                  <div className="bg-white px-8 py-6 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center gap-4 max-w-3xl text-center">
-                    <p className="text-3xl md:text-5xl font-bold text-indigo-900 leading-tight">
+                  <div className="bg-white px-10 py-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center gap-6 max-w-4xl text-center">
+                    <p className="text-4xl md:text-6xl font-bold text-indigo-900 leading-tight tracking-tight">
                       {currentTask.happySentence}
                     </p>
                     <button 
                       onClick={nextTask}
-                      className="mt-2 px-10 py-3 bg-indigo-600 text-white rounded-2xl text-xl md:text-2xl font-bold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 flex items-center gap-3"
+                      className="mt-2 px-12 py-4 bg-indigo-600 text-white rounded-2xl text-2xl md:text-3xl font-bold hover:bg-indigo-700 transition-all duration-200 hover:scale-105 shadow-lg shadow-indigo-200 flex items-center gap-3"
                     >
                       下一個 <ChevronRight className="w-8 h-8" />
                     </button>
