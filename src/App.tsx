@@ -194,25 +194,25 @@ export default function App() {
                 <motion.div 
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
-                  className="flex-1 w-full flex flex-col items-center justify-center gap-8"
+                  className="flex-1 w-full flex flex-col items-center justify-center gap-4 overflow-hidden"
                 >
-                  <div className="w-full max-w-4xl aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
+                  <div className="w-full max-w-xl max-h-[50vh] aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
                     <img 
                       src={currentTask.correctImageUrl} 
                       alt="Correct" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                       referrerPolicy="no-referrer"
                     />
                   </div>
-                  <div className="bg-white px-10 py-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center gap-6 max-w-4xl text-center">
-                    <p className="text-4xl md:text-6xl font-bold text-indigo-900 leading-tight tracking-tight">
+                  <div className="bg-white px-6 py-4 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center gap-3 max-w-2xl text-center">
+                    <p className="text-2xl md:text-4xl font-bold text-indigo-900 leading-tight tracking-tight">
                       {currentTask.happySentence}
                     </p>
                     <button 
                       onClick={nextTask}
-                      className="mt-2 px-12 py-4 bg-indigo-600 text-white rounded-2xl text-2xl md:text-3xl font-bold hover:bg-indigo-700 transition-all duration-200 hover:scale-105 shadow-lg shadow-indigo-200 flex items-center gap-3"
+                      className="px-8 py-2 bg-indigo-600 text-white rounded-2xl text-xl md:text-2xl font-bold hover:bg-indigo-700 transition-all duration-200 hover:scale-105 shadow-lg shadow-indigo-200 flex items-center gap-3"
                     >
-                      下一個 <ChevronRight className="w-8 h-8" />
+                      下一個 <ChevronRight className="w-6 h-6" />
                     </button>
                   </div>
                 </motion.div>
@@ -226,17 +226,17 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="h-full flex flex-col items-center justify-center gap-8 p-6"
+              className="h-full flex flex-col items-center justify-center p-4"
             >
-              <div className="bg-white p-12 rounded-3xl shadow-2xl border border-slate-100 text-center max-w-3xl w-full">
-                <h2 className="text-4xl font-bold text-indigo-900 mb-8">練習總結</h2>
+              <div className="bg-white p-6 md:p-10 rounded-3xl shadow-2xl border border-slate-100 text-center max-w-3xl w-full flex flex-col items-center gap-6 overflow-y-auto max-h-full">
+                <h2 className="text-3xl font-bold text-indigo-900">練習總結</h2>
                 <button 
                   onClick={() => speak(studentTasks.map(t => t.userSelectedSentence || t.happySentence).join(' '))}
-                  className="w-full p-8 bg-white hover:bg-indigo-50 rounded-3xl shadow-sm border border-slate-200 transition-colors flex flex-col items-center gap-8"
+                  className="w-full p-4 bg-white hover:bg-indigo-50 rounded-3xl shadow-sm border border-slate-200 transition-colors flex flex-col items-center gap-4"
                 >
-                  <div className="flex flex-wrap justify-center gap-4">
+                  <div className="flex flex-wrap justify-center gap-2">
                     {studentTasks.map((task) => (
-                      <div key={task.id} className="w-40 h-28 rounded-2xl overflow-hidden shadow-md">
+                      <div key={task.id} className="w-24 h-16 rounded-xl overflow-hidden shadow-md">
                         <img 
                           src={task.correctImageUrl} 
                           alt="Task" 
@@ -246,14 +246,14 @@ export default function App() {
                       </div>
                     ))}
                   </div>
-                  <div className="flex items-center justify-between w-full gap-4">
-                    <span className="text-3xl font-bold text-indigo-900 text-center flex-1">
+                  <div className="flex items-center justify-between w-full gap-2">
+                    <span className="text-xl md:text-2xl font-bold text-indigo-900 text-center flex-1">
                       {studentTasks.map(t => t.userSelectedSentence || t.happySentence).join(' ')}
                     </span>
-                    <Volume2 className="w-12 h-12 text-indigo-500 flex-shrink-0" />
+                    <Volume2 className="w-8 h-8 text-indigo-500 flex-shrink-0" />
                   </div>
                 </button>
-                <p className="text-3xl font-bold text-slate-700 mb-8 mt-12">
+                <p className="text-2xl md:text-3xl font-bold text-slate-700">
                   {selectedStudent.finalSentence}
                 </p>
                 <button 
@@ -264,7 +264,7 @@ export default function App() {
                     const clearedTasks = tasks.map(t => ({...t, userSelectedSentence: undefined}));
                     setTasks(clearedTasks);
                   }}
-                  className="px-12 py-4 bg-indigo-600 text-white rounded-2xl text-2xl font-bold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200"
+                  className="px-10 py-3 bg-indigo-600 text-white rounded-2xl text-xl md:text-2xl font-bold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200"
                 >
                   完成
                 </button>
